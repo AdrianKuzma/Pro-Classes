@@ -12,6 +12,9 @@ class Main{
         System.out.println(BudgetTotal(new Person[] {person1,person2,person3}));
         System.out.println(area(triangle));
         System.out.println(perimeter(triangle));
+        Worker worker1 = new Worker("Jozko","Mrkvicka",4,7,1990);
+        worker1.setJobPosition("IT Programmer");worker1.setSalary("2100 eur");
+        System.out.println(worker1.getName() + " " + worker1.getSurname() + ", " + worker1.getJobPosition() + ", Salary: " + worker1.getSalary() );
     }
     public static int BudgetTotal(Person[] people) {
         int a = 0;

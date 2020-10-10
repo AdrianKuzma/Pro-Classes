@@ -1,5 +1,5 @@
 public class Student {
-private int studentNumber;
+    private int studentNumber;
     private int phoneNumber;
     private String name;
     private String address;
