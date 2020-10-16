@@ -1,11 +1,11 @@
 public class Person {
     private String name;
-    private int Age;
+    private int age;
     private int budget;
 
     public Person(String name, int age, int budget) {
         this.name = name;
-        Age = age;
+        this.age = age;
         this.budget = budget;
     }
 
