@@ -1,3 +1,5 @@
+package exercises;
+
 public class Student {
     private int studentNumber;
     private int phoneNumber;

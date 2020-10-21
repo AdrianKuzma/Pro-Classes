@@ -1,4 +1,6 @@
-public class Items{
+package exercises;
+
+public class Item {
     private String name;
     private int value;
 
@@ -10,7 +12,7 @@ public class Items{
         this.value = value;
     }
 
-    public Items(String name, int value) {
+    public Item(String name, int value) {
         this.name = name;
         this.value = value;
     }

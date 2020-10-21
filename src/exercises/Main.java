@@ -1,3 +1,6 @@
+package exercises;
+import java.util.ArrayList;
+
 class Main{
     public static void main(String[] args) {
         Student student1 = new Student(2,123456, "Sam", "Legionarska 1, 01001 Zilina", 52142);
@@ -8,11 +11,14 @@ class Main{
         Triangle triangle =  new Triangle(3, 4,5  );
         Worker worker1 = new Worker("Jozko","Mrkvicka",4,7,1990);
         worker1.setJobPosition("IT Programmer");worker1.setSalary("2100 eur");
-        Items item1 = new Items("goldfish", 45);
-        Items item2 = new Items("watch", 15);
-        Items item3 = new Items("dog", 53);
-        Items[] items1 = {item1};
-        Items[] items2 = {item2, item3};
+        Item item1 = new Item("goldfish", 45);
+        Item item2 = new Item("watch", 15);
+        Item item3 = new Item("dog", 53);
+        ArrayList<Item> items1 = new ArrayList<>();
+        items1.add(item1);
+        items1.add(item2);
+        ArrayList<Item> items2 = new ArrayList<>();
+        items1.add(item3);
         Warriors warrior1 = new Warriors("warrior1", 10, 4, 7, items1);
         Warriors warrior2 = new Warriors("warrior2", 9, 5, 3, items2);
 
@@ -44,7 +50,8 @@ class Main{
         int area = s * (s - Ara.getA()) * (s - Ara.getB()) * (s - Ara.getC());
         return Math.sqrt(area);
     }
-    public  static int battle(Warriors warrior1, Warriors warrior2){
+
+    public static int battle(Warriors warrior1, Warriors warrior2){
         if(warrior1.getForce() == warrior2.getForce()){
             warrior1.setLife(warrior1.getLife() - 1);
             warrior2.setLife(warrior2.getLife() - 1);
@@ -52,12 +59,29 @@ class Main{
         }
         else if (warrior1.getForce() > warrior2.getForce()){
             warrior2.setLife(warrior2.getLife() - 1);
+            itemC(warrior2,warrior1);
             return 1;
         }
         else {
             warrior1.setLife(warrior1.getLife() - 1);
+            itemC(warrior1,warrior2);
             return 2;
         }
     }
 
+    public static void itemC(Warriors warrior1,Warriors warrior2){
+        ArrayList<Item> items1 = warrior1.getItems();
+        if(!items1.isEmpty()){
+            Item x = items1.get(0);
+            for(int i = 1; i < items1.size(); i++){
+                Item y = items1.get(i);
+                if(y.getValue() > x.getValue()){
+                    x = y;
+                }
+            }
+            items1.remove(x);
+            warrior2.getItems().add(x);
+        }
+
+    }
 }
