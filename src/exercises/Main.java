@@ -21,6 +21,8 @@ class Main{
         items1.add(item3);
         Warriors warrior1 = new Warriors("warrior1", 10, 4, 7, items1);
         Warriors warrior2 = new Warriors("warrior2", 9, 5, 3, items2);
+        Shiritori shi = new Shiritori();
+
 
         System.out.println(student1.getName() + " " + student1.getStudentNumber2());
         System.out.println(student1.getStudentNumber() + ", " + student1.getPhoneNumber() + ", " + student1.getAddress());
@@ -30,8 +32,9 @@ class Main{
         System.out.println(perimeter(triangle));
         System.out.println(worker1.getName() + " " + worker1.getSurname() + ", " + worker1.getJobPosition() + ", Salary: " + worker1.getSalary() );
         System.out.println(battle(warrior1,warrior2));
+        shi.runGame(new String[]{"word", "dowry", "bodel", "leader", "righteous", "serpent"});
     }
-
+    
     public static int budgetTotal(Person[] people) {
         int a = 0;
         for (int i = 0; i < people.length; i++) {
