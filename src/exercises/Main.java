@@ -32,7 +32,7 @@ class Main{
         System.out.println(perimeter(triangle));
         System.out.println(worker1.getName() + " " + worker1.getSurname() + ", " + worker1.getJobPosition() + ", Salary: " + worker1.getSalary() );
         System.out.println(battle(warrior1,warrior2));
-        shi.runGame(new String[]{"word", "dowry", "yodel", "leader", "righteous", "serpent"});
+        shi.runGame(new String[]{"word", "dowry", "yhhodel", "leader", "righteous", "serpent"});
     }
     
     public static int budgetTotal(Person[] people) {
